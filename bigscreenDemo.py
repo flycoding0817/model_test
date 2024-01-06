@@ -4,6 +4,8 @@ from flask import jsonify
 import threading
 import time
 
+
+
 format_time = time.strftime("%Y-%m-%d", time.localtime(time.time()))
 
 
@@ -24,19 +26,19 @@ app = Flask(__name__,static_url_path="/static")
 
 INPUT_CONTEXT = " "
 
-# @app.route('/message', methods=['POST'])
-# def reply():
-#     req_msg = request.form['msg']
-#     user_ip = request.remote_addr
-#     res_new = 'aatest'
-#     return jsonify({'text': res_new})
+@app.route('/message', methods=['POST'])
+def reply():
+    req_msg = request.form['msg']
+    user_ip = request.remote_addr
+    res_new = 'aatest'
+    return jsonify({'text': res_new})
 
 @app.route("/")
 def index():
-    # return render_template("index_focus_rotation.html")
-    return render_template("index_flex.html")
+    return render_template("index_bootstrap.html")
+    # return render_template("index01.html")
+
 
 # 启动APP
 if (__name__ == "__main__"):
-    # app.run(host = '10.209.22.222', port = 8810)
-    app.run(host='localhost', port=8810)
+    app.run(host = 'localhost', port = 8810)

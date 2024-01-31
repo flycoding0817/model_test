@@ -2,6 +2,7 @@ package leedCode;
 import java.util.*;
 
 
+
 public class num_1 {
 
 
